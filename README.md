@@ -1,3 +1,7 @@
+This fork just patches out reading meta data from flac streams in a very unsatisfactory way.
+
+I use mpd with upmpdcli and this server sets tags for every song. When a flac stream contains tag information, mpd replaces the tags set from upmpdcli with tags from the flac stream making my life a lot harder. 
+
 # Music Player Daemon
 
 http://www.musicpd.org
