@@ -57,8 +57,10 @@ static void flacPrintErroredState(FLAC__StreamDecoderState state)
 static void flacMetadata(gcc_unused const FLAC__StreamDecoder * dec,
 			 const FLAC__StreamMetadata * block, void *vdata)
 {
-	auto &fd = *(FlacDecoder *)vdata;
-	fd.OnMetadata(*block);
+	// Patched out to ignore meta data
+	
+	//auto &fd = *(FlacDecoder *)vdata;
+	//fd.OnMetadata(*block);
 }
 
 static FLAC__StreamDecoderWriteStatus

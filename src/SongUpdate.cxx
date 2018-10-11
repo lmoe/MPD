@@ -152,12 +152,12 @@ DetachedSong::LoadFile(Path path) noexcept
 	if (!GetFileInfo(path, fi) || !fi.IsRegular())
 		return false;
 
-	TagBuilder tag_builder;
-	if (!ScanFileTagsWithGeneric(path, tag_builder))
-		return false;
+	//TagBuilder tag_builder;
+	//if (!ScanFileTagsWithGeneric(path, tag_builder))
+		//return false;
 
 	mtime = fi.GetModificationTime();
-	tag_builder.Commit(tag);
+	//tag_builder.Commit(tag);
 	return true;
 }
 
@@ -172,12 +172,12 @@ DetachedSong::Update() noexcept
 
 		return LoadFile(path_fs);
 	} else if (IsRemote()) {
-		TagBuilder tag_builder;
+		/*TagBuilder tag_builder;
 		if (!tag_stream_scan(uri.c_str(), tag_builder))
 			return false;
 
 		mtime = std::chrono::system_clock::time_point::min();
-		tag_builder.Commit(tag);
+		tag_builder.Commit(tag);*/
 		return true;
 	} else
 		// TODO: implement
